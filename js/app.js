@@ -47,16 +47,38 @@ Player.prototype.render = function () {
 
 Player.prototype.handleInput = function (key) {
 	if (key === 'left') {
-		this.x -= 100;
+		if (this.x <= 0) {
+			this.x;
+		}
+		else {
+			this.x -= 100;
+		}
 	}
 	else if (key === 'right') {
-		this.x += 100;
+		if (this.x >= 400) {
+		  this.x;
+		}
+		else {
+			this.x += 100;
+		}
 	}
 	else if (key === 'up') {
-		this.y -= 82;
+		if (this.y <= 72) {
+			this.x = 200;
+			this.y = 400;
+			life--;
+		}
+		else {
+			this.y -= 82;
+		}
 	}
 	else if (key === 'down') {
-		this.y += 82;
+		if (this.y >= 400) {
+			this.y;
+		}
+		else {
+			this.y += 82;
+		}
 	}
 }
 // Now instantiate your objects.
