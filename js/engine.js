@@ -96,36 +96,6 @@ var Engine = (function (global) {
 		});
 	}
 
-	//code for player movement limits
-	/* (where y === waterzone)
-		if (player.y == __) {
-			
-			$(player).fadeOut('slow');
-
-			player.x = 200;
-			player.y = 400;
-
-			life--;
-
-		}
-	*/
-	//abdullahi's code
-	/*allEnemies.forEach(function(enemy)
-      {
-        if((player.x+ 50 >=enemy.x)&& (player.x +50<= enemy.x+101)&&(player.y +150 >=enemy.y)&&(player.y + 150 <=enemy.y +171))
-        {
-               
-          player.x = 200;
-          player.y = 420;
-          live --;
-          jump.play();
-               
-        }
-      });
-   
-    } */
-
-
 	/* This is called by the update function  and loops through all of the
    * objects within your allEnemies array as defined in app.js and calls
    * their update() methods. It will then call the update function for your
@@ -133,6 +103,7 @@ var Engine = (function (global) {
    * the data/properties related to  the object. Do your drawing in your
    * render methods.
    */
+
 	function updateEntities(dt) {
 		allEnemies.forEach(function (enemy) {
 			enemy.update(dt);

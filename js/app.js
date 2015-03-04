@@ -36,9 +36,17 @@ var Player = function (x, y) {
 	this.y = y;
 }
 
-Player.prototype.update = function (dt) {
+Player.prototype.update = function () {
 
 }
+
+//code for selecting player. creating a select player method
+/*
+	Player.prototype.select = function () {
+	ctx.drawImage(Resources.get(),x,y);
+	ctx.drawImage(Resources.get(),x,y);
+	ctx.drawImage(Resources.get(),x,y);
+*/
 
 Player.prototype.render = function () {
 	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
