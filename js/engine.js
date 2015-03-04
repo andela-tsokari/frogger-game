@@ -182,3 +182,31 @@ var Engine = (function(global) {
      */
     global.ctx = ctx;
 })(this);
+
+var homie = [
+  'images/char-boy.png',
+  'images/char-cat-girl.png',
+  'images/char-horn-girl.png',
+  'images/char-pink-girl.png',
+  'images/char-princess-girl.png'
+]
+
+if (this.sprite == '') {
+  switch (n) {
+    case 1:
+      this.sprite = homie[1];
+      break;
+    case 2:
+      this.sprite = homie[2];
+      break;
+    case 3:
+      this.sprite = homie[3];
+      break;
+    case 4:
+      this.sprite = homie[4];
+      break;
+    default:
+      this.sprite = homie[0];
+      break;
+  }
+}

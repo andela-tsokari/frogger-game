@@ -16,9 +16,9 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
   // all computers.
-  this.x += 2 + dt;
-  if ( this.x > 500 ) {
-    this.x = 0;
+  this.x += Math.floor(Math.random() * 500) * dt;
+  if ( this.x > 505 ) {
+    this.x = -(Math.floor(Math.random() * 500));
   }
 }
 
@@ -62,9 +62,9 @@ Player.prototype.handleInput = function ( key ) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var allEnemies = [new Enemy( -80, 59 ),
-  new Enemy( 0, 146 ),
-  new Enemy( -300, 230 )]
+var allEnemies = [new Enemy( -(Math.floor(Math.random()*500)), 59 ),
+  new Enemy( -(Math.floor(Math.random()*500)), 146 ),
+  new Enemy( -(Math.floor(Math.random()*500)), 230 ) ]
 
 var player = new Player(200, 400);
 // This listens for key presses and sends the keys to your
@@ -79,3 +79,15 @@ document.addEventListener('keyup', function(e) {
 
   player.handleInput(allowedKeys[e.keyCode]);
 });
+
+
+/*Tams' Additional Features */
+var Selector = function (x, y) {
+  this.sprite = 'images/Selector.png';
+  this.x = Player.x;
+  this.y = Player.y;
+}
+
+Selector.prototype.render = function () {
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y)
+}
